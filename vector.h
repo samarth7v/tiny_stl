@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <memory>
+#include <initializer_list>
+#include <iterator>
 
 template<typename T>
 class vector{
@@ -15,6 +17,17 @@ class vector{
             }
         }
         vector():size_(2), csize_(0), data_(std::make_unique<T[]>(2)) {}
+        vector(std::initializer_list<T> _list)
+        {
+            int size = std::distance(_list.begin(),_list.end());
+            size_ = size;
+            csize_ = size;
+            data_  = std::make_unique<T[]>(size_);
+            for(int i=0;i<csize_;i++){
+                data_[i] = *(_list.begin()+i);
+            }
+        }
+
     
     //push back
         void push_back(const T& value)

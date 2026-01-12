@@ -13,6 +13,10 @@ int main(){
     std::cout << "back = " << vec.back()<<"\n";
     vector<int>vec2;
     vec2.push_back(5);
-    std::cout << "this is push back = "<<vec2[0];
-    
+    std::cout << "this is push back = "<<vec2[0]<<"\n";
+    vector<int> t= {1,2,3};
+    int n = t.size();
+    for(int i =0;i<n;i++){
+        std::cout << t[i]<<"\n";
+    }
 }
