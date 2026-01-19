@@ -19,4 +19,7 @@ int main(){
     for(int i =0;i<n;i++){
         std::cout << t[i]<<"\n";
     }
+    for(auto it = t.begin(); it < t.end();it++){
+        std::cout << *it << std::endl;
+    }
 }

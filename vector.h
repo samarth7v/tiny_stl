@@ -27,7 +27,50 @@ class vector{
                 data_[i] = *(_list.begin()+i);
             }
         }
-
+        class Iterator{
+            public:
+                Iterator(T *p):ptr(p){}
+                T& operator*(){
+                    return *ptr;
+                }
+                Iterator& operator++(){
+                    ++ptr;
+                    return *this;
+                }
+                Iterator& operator++(int){
+                    ++ptr;
+                    return *this;
+                }
+                Iterator& operator+(size_t a){
+                    ptr+a;
+                    return *this;
+                }
+                bool operator!=(const Iterator&other){
+                    return ptr!=other.ptr;
+                }
+                bool operator<(const Iterator&other){
+                    return ptr<other.ptr;
+                }
+                bool operator<=(const Iterator&other){
+                    return ptr<=other.ptr;
+                }
+                bool operator>(const Iterator&other){
+                    return ptr>other.ptr;
+                }
+                bool operator>=(const Iterator&other){
+                    return ptr>=other.ptr;
+                }
+            private:
+                T* ptr;
+        };
+        Iterator begin(){
+            Iterator I(&data_[0]);
+            return I;
+        }
+        Iterator end(){
+            Iterator I(&data_[csize_]);
+            return I;
+        }
     
     //push back
         void push_back(const T& value)
