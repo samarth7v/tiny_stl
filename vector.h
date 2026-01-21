@@ -69,6 +69,10 @@ class vector{
             data_[size_] = value;
             size_ ++;
         }
+        T front()
+        {
+            return data_[0];
+        }
         T back()
         {
             return data_[size_-1];
