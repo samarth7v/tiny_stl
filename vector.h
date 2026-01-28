@@ -103,19 +103,9 @@ class vector{
             return size_;
         }
         T& operator[](size_t index){
-            if(index>=size_)
-            {
-                std::cout<<"Index exceeded size of vector\n";
-                return none;
-            }
             return data_[index];
         }
         const T& operator[](size_t index) const{
-            if(index>=size_)
-            {
-                std::cout<<"Index exceeded size of vector\n";
-                return none;
-            }
             return data_[index];
         }
     private:
