@@ -99,7 +99,7 @@ class vector{
             if (size_>0)
                 --size_;
         }
-        size_t size(){
+        size_t size() const {
             return size_;
         }
         T& operator[](size_t index){
